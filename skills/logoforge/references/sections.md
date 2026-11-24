@@ -213,6 +213,7 @@ export function BuiltWith() {
 ```
 
 If a brand name is visible next to the logo, keep `title=""` and drop the `sr-only` span.
+Only list tools the product actually uses.
 
 ## 5. Comparison table
 
@@ -311,6 +312,9 @@ export function SignInButtons() {
 Use `<a href>` instead of `<button>` when the provider is a redirect, and keep the same
 text and focus styles. Follow the provider's sign-in branding guidelines when they exist
 (the logo page links them). Do not recolor the mark or build a fake provider button.
+
+Only show a provider the product really supports. A sign-in button is a functional claim,
+not decoration.
 
 ## Final checks for every pattern
 
