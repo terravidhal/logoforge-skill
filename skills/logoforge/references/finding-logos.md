@@ -90,7 +90,7 @@ Fields to trust:
 | `svg` keys | The variants that really exist. |
 | `install` | The command to run. |
 | `guidelines` | The brand's public guidelines, when known. |
-| `officialVariants` | Brand-published files, when present (`official-lockup-horizontal`, …). |
+| `officialVariants` | Brand-published files, when present (`official-lockup-horizontal`, …). This field is in the JSON API response and on the logo page; the MCP `get_logo` tool returns the standard variants only. |
 
 ## Matching rules
 

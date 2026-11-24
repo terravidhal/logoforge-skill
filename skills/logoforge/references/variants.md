@@ -20,9 +20,10 @@ For Stripe: `icon`, `icon-mono`, `wordmark`. Never assume a variant exists.
 | `wordmark-dark` | The lockup for dark backgrounds. | When the brand has a dark lockup. |
 | `official-*` | A file published by the brand, kept as published (`official-lockup-horizontal`, `official-icon`, `official-wordmark`, …). | When Logoforge records an official file. |
 
-Read `officialVariants` in the API/MCP response. The shadcn item names for those files
-are listed in `https://logoforge.terravidhal.me/r/registry.json`; do not derive their
-suffix yourself.
+Read `officialVariants` in the one-logo JSON API response
+(`/api/logos/<slug>.json`) or on the logo page. The shadcn item names for those files are
+listed in `https://logoforge.terravidhal.me/r/registry.json`; do not derive their suffix
+yourself.
 
 ## Component props
 

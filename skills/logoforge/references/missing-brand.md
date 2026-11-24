@@ -9,7 +9,7 @@ Check the obvious aliases before concluding:
 - Punctuation and case are ignored: `Next.js`, `next-js`, `nextjs`.
 - Former names and abbreviations may be in `aliases`.
 - Some brands have separate marks or official lockups: check `officialVariants` in the
-  API/MCP response, and the logo page.
+  one-logo JSON API response, and on the logo page.
 
 Use MCP `search_logos`, the API index, or the gallery:
 `https://logoforge.terravidhal.me/#logos`.
