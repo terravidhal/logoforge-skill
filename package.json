@@ -1,0 +1,13 @@
+{
+  "name": "logoforge-skill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent skill for installing real brand logos from Logoforge.",
+  "license": "MIT",
+  "scripts": {
+    "lint": "node scripts/check-skill.mjs",
+    "examples:install": "npm --prefix examples install",
+    "examples:build": "npm --prefix examples run build",
+    "examples:screenshots": "npm --prefix examples run screenshots"
+  }
+}

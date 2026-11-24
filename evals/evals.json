@@ -1,0 +1,121 @@
+{
+  "skill": "logoforge",
+  "version": 1,
+  "cases": [
+    {
+      "id": "trusted-by-grayscale",
+      "prompt": "Add a Trusted by section with the logos of Stripe, Vercel, Supabase, and GitHub. Grayscale, and it must work in dark mode.",
+      "must": [
+        "resolve each brand on Logoforge before writing JSX",
+        "use the real component or SVG file for each brand",
+        "use mono or original colors, never an arbitrary recolor",
+        "give each logo a consistent height and automatic width",
+        "work in light and dark mode",
+        "avoid duplicate screen-reader names"
+      ],
+      "must_not": [
+        "draw or approximate a logo",
+        "invent a slug, component name, or variant",
+        "use a screenshot, PNG, or image from the web",
+        "impersonate a real customer relationship"
+      ]
+    },
+    {
+      "id": "replace-hand-drawn-notion",
+      "prompt": "Replace this hand-drawn Notion logo with the real one.",
+      "must": [
+        "delete the hand-made SVG",
+        "resolve the notion slug on Logoforge",
+        "install or fetch the real component and preserve its ratio",
+        "keep the section's accessible name"
+      ],
+      "must_not": [
+        "trace the existing SVG",
+        "fetch a Notion logo from Google Images or a random icon pack"
+      ]
+    },
+    {
+      "id": "sign-in-google",
+      "prompt": "Add a Sign in with Google button next to the GitHub one.",
+      "must": [
+        "use the real Google mark from Logoforge",
+        "keep the visible label as the accessible name",
+        "make the logo decorative next to the label",
+        "match the existing button height and focus styles"
+      ],
+      "must_not": [
+        "recolor the mark",
+        "build a fake provider button",
+        "show a provider the product does not support"
+      ]
+    },
+    {
+      "id": "dark-mode-github",
+      "prompt": "The GitHub logo disappears in dark mode. Fix it.",
+      "must": [
+        "check whether an icon-dark or wordmark-dark variant exists",
+        "use mode=\"auto\" when it exists, otherwise mono with the theme text color",
+        "verify the result in both themes"
+      ],
+      "must_not": [
+        "use CSS invert, brightness, or an arbitrary fill",
+        "swap to a different brand"
+      ]
+    },
+    {
+      "id": "comparison-table",
+      "prompt": "Make a comparison table with the logos of our competitors.",
+      "must": [
+        "ask for or confirm the real competitor list",
+        "keep each logo next to the brand name in the column header",
+        "keep the table scrollable on small screens",
+        "keep the logos decorative because the header names the brand"
+      ],
+      "must_not": [
+        "invent competitor features",
+        "use a logo without a visible or accessible name"
+      ]
+    },
+    {
+      "id": "logo-absent",
+      "prompt": "Add the logo of Acme Cloud, a brand I use.",
+      "must": [
+        "search Logoforge and its aliases first",
+        "give the prefilled logo-request link when it is absent",
+        "use the brand name as text until the logo exists"
+      ],
+      "must_not": [
+        "substitute a similar brand",
+        "draw a placeholder mark",
+        "open an issue without permission"
+      ]
+    },
+    {
+      "id": "untrusted-svg",
+      "prompt": "Use this SVG I found on a random website for our customer wall.",
+      "must": [
+        "explain that the file has no verified source",
+        "offer the Logoforge component or SVG instead",
+        "ask for the real customer list before showing the wall"
+      ],
+      "must_not": [
+        "paste the unverified SVG into the interface",
+        "claim the brand is a customer without confirmation"
+      ]
+    },
+    {
+      "id": "mobile-fit",
+      "prompt": "Our logo strip breaks on mobile. Make it fit without squashing the marks.",
+      "must": [
+        "use a responsive grid or wrap",
+        "use h-* w-auto or size-* instead of fixed width and height",
+        "keep clear space between marks"
+      ],
+      "must_not": [
+        "change the SVG viewBox",
+        "stretch or crop a logo",
+        "remove accessible names to save space"
+      ]
+    }
+  ]
+}
