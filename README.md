@@ -89,8 +89,8 @@ The server needs no key and no account.
 - MCP: https://logoforge.terravidhal.me/mcp
 - Logo requests: https://github.com/terravidhal/logoforge/issues/new?template=logo-request.md
 
-Logoforge covers 1,031 developer brands. If a brand is missing, the skill files a request
-instead of inventing a logo.
+Logoforge covers 1,031 developer brands. If a brand is missing, the skill points to the
+official request form instead of inventing a logo.
 
 ## License
 
