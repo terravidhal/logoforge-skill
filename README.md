@@ -13,6 +13,8 @@ Your agent stops drawing, inventing, or guessing logos. It resolves each brand o
 [Logoforge](https://logoforge.terravidhal.me), installs the official React component or
 SVG, and builds the section you asked for.
 
+![Before: logos drawn by an agent. After: the same brands as real Logoforge components.](assets/readme/before-after.png)
+
 ## What it does
 
 - Finds the right Logoforge slug through the MCP server, the JSON API, or the shadcn registry.
@@ -22,6 +24,33 @@ SVG, and builds the section you asked for.
   "Sign in with" sections.
 - Enforces brand rules: no redrawing, no distortion, original colors or mono, clear space,
   accessible names, and light/dark support.
+
+## See it running
+
+The [`examples/`](examples/) app builds all six recipes with the real registry components.
+Desktop, 1440 px:
+
+| Light | Dark |
+|---|---|
+| ![Desktop, light mode](assets/readme/example-desktop-light.png) | ![Desktop, dark mode](assets/readme/example-desktop-dark.png) |
+
+Mobile, 390 px:
+
+| Light | Dark |
+|---|---|
+| ![Mobile, light mode](assets/readme/example-mobile-light.png) | ![Mobile, dark mode](assets/readme/example-mobile-dark.png) |
+
+```bash
+cd examples
+npm install
+npm run dev
+```
+
+The six recipes are Works with, Trusted by, integrations, built-with footer, comparison
+table, and Sign in with. The logos in `examples/components/logos/` are the unmodified
+component files served by `https://logoforge.terravidhal.me/r/<slug>.json`; in a real
+project, install them with `npx shadcn@latest add @logoforge/<slug>`. See
+[`examples/README.md`](examples/README.md) for the details.
 
 ## Install
 
@@ -91,6 +120,25 @@ The server needs no key and no account.
 
 Logoforge covers 1,031 developer brands. If a brand is missing, the skill points to the
 official request form instead of inventing a logo.
+
+## Repository layout
+
+```text
+skills/logoforge/     SKILL.md and the five reference files
+examples/             minimal Next.js app with the six recipes
+assets/readme/        before/after and light/dark screenshots
+evals/evals.json      prompt-level checks for the skill behaviour
+scripts/              repository check (npm run lint)
+```
+
+Maintainer checks:
+
+```bash
+npm run lint
+cd examples && npm ci && npm run build
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the rules and the files to edit.
 
 ## License
 
