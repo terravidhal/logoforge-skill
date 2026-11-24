@@ -41,8 +41,11 @@ previews what will be installed.
 Manual copy:
 
 ```bash
-cp -r skills/logoforge ~/.claude/skills/logoforge        # Claude Code
-cp -r skills/logoforge ~/.agents/skills/logoforge        # Codex, Cursor, Gemini CLI, OpenCode
+cp -r skills/logoforge ~/.claude/skills/logoforge             # Claude Code
+cp -r skills/logoforge ~/.agents/skills/logoforge             # Codex
+cp -r skills/logoforge ~/.cursor/skills/logoforge             # Cursor
+cp -r skills/logoforge ~/.gemini/skills/logoforge             # Gemini CLI
+cp -r skills/logoforge ~/.config/opencode/skills/logoforge    # OpenCode
 ```
 
 ### MCP server (recommended)
