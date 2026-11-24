@@ -33,6 +33,7 @@ const required = [
   "assets/readme/example-desktop-dark.png",
   "assets/readme/example-mobile-light.png",
   "assets/readme/example-mobile-dark.png",
+  "assets/demo.gif",
 ];
 
 const logoforgeComponents = [
@@ -139,6 +140,14 @@ for (const file of required.filter((entry) => entry.endsWith(".png"))) {
   if (!(await exists(file))) continue;
   const { size } = await stat(path.join(root, file));
   if (size < 10_000) errors.push(`${file} looks too small (${size} bytes)`);
+}
+
+if (await exists("assets/demo.gif")) {
+  const file = path.join(root, "assets/demo.gif");
+  const { size } = await stat(file);
+  const header = (await readFile(file)).subarray(0, 6).toString("latin1");
+  if (!header.startsWith("GIF8")) errors.push("assets/demo.gif is not a GIF");
+  if (size < 10_000) errors.push(`assets/demo.gif looks too small (${size} bytes)`);
 }
 
 for (const warning of warnings) console.warn(`warning: ${warning}`);

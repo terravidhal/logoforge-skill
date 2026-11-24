@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "node scripts/check-skill.mjs",
+    "demo": "node examples/scripts/make-demo.mjs",
     "examples:install": "npm --prefix examples install",
     "examples:build": "npm --prefix examples run build",
     "examples:screenshots": "npm --prefix examples run screenshots"

@@ -3,17 +3,21 @@
 Real brand logos in your UI, installed by your coding agent.
 
 ```bash
-npx skills add terravidhal/logoforge-skill
+npx skills@latest add terravidhal/logoforge-skill --skill logoforge
 ```
 
-Works with Claude Code, Codex, Cursor, Gemini CLI, OpenCode, and any agent that reads
-`SKILL.md`.
+Works with Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, and any agent
+that reads `SKILL.md`.
 
 Your agent stops drawing, inventing, or guessing logos. It resolves each brand on
 [Logoforge](https://logoforge.terravidhal.me), installs the official React component or
 SVG, and builds the section you asked for.
 
 ![Before: logos drawn by an agent. After: the same brands as real Logoforge components.](assets/readme/before-after.png)
+
+![Short demo: the six recipes with real logos, in light and dark mode.](assets/demo.gif)
+
+A five-second pass over the six recipes, built with the real registry components.
 
 ## What it does
 
@@ -54,27 +58,39 @@ project, install them with `npx shadcn@latest add @logoforge/<slug>`. See
 
 ## Install
 
-One command, then pick your agent:
+One command per agent. Skills install into the current project by default; add `-g` to
+make the skill available in every project on your machine.
+
+| Agent | One line |
+|---|---|
+| Claude Code | `npx skills@latest add terravidhal/logoforge-skill --skill logoforge -a claude-code` |
+| Codex | `npx skills@latest add terravidhal/logoforge-skill --skill logoforge -a codex` |
+| Cursor | `npx skills@latest add terravidhal/logoforge-skill --skill logoforge -a cursor` |
+| Gemini CLI | `npx skills@latest add terravidhal/logoforge-skill --skill logoforge -a gemini-cli` |
+| GitHub Copilot | `npx skills@latest add terravidhal/logoforge-skill --skill logoforge -a github-copilot` |
+| OpenCode | `npx skills@latest add terravidhal/logoforge-skill --skill logoforge -a opencode` |
+
+Add `-g` to install globally, `--copy` to write files instead of symlinks, and `--list` to
+preview the skill. The CLI needs Node.js 22.20 or later.
+
+Manual copy, global scope:
+
+| Agent | Folder |
+|---|---|
+| Claude Code | `~/.claude/skills/logoforge` |
+| Codex | `~/.agents/skills/logoforge` |
+| Cursor | `~/.cursor/skills/logoforge` |
+| Gemini CLI | `~/.gemini/skills/logoforge` |
+| GitHub Copilot | `~/.copilot/skills/logoforge` |
+| OpenCode | `~/.config/opencode/skills/logoforge` |
 
 ```bash
-npx skills add terravidhal/logoforge-skill -a claude-code
-npx skills add terravidhal/logoforge-skill -a codex
-npx skills add terravidhal/logoforge-skill -a cursor
-npx skills add terravidhal/logoforge-skill -a gemini-cli
-npx skills add terravidhal/logoforge-skill -a opencode
-```
-
-`-g` installs for the current user. `--copy` copies instead of linking. `--list`
-previews what will be installed.
-
-Manual copy:
-
-```bash
-cp -r skills/logoforge ~/.claude/skills/logoforge             # Claude Code
-cp -r skills/logoforge ~/.agents/skills/logoforge             # Codex
-cp -r skills/logoforge ~/.cursor/skills/logoforge             # Cursor
-cp -r skills/logoforge ~/.gemini/skills/logoforge             # Gemini CLI
-cp -r skills/logoforge ~/.config/opencode/skills/logoforge    # OpenCode
+cp -r skills/logoforge ~/.claude/skills/logoforge    # Claude Code
+cp -r skills/logoforge ~/.agents/skills/logoforge    # Codex
+cp -r skills/logoforge ~/.cursor/skills/logoforge    # Cursor
+cp -r skills/logoforge ~/.gemini/skills/logoforge    # Gemini CLI
+cp -r skills/logoforge ~/.copilot/skills/logoforge   # GitHub Copilot
+cp -r skills/logoforge ~/.config/opencode/skills/logoforge  # OpenCode
 ```
 
 ### MCP server (recommended)
@@ -87,8 +103,9 @@ claude mcp add --transport http logoforge https://logoforge.terravidhal.me/mcp
 ```
 
 Cursor: add `{"mcpServers":{"logoforge":{"url":"https://logoforge.terravidhal.me/mcp"}}}`
-to `.cursor/mcp.json`. VS Code: add the same URL under `servers` in `.vscode/mcp.json`.
-The server needs no key and no account.
+to `.cursor/mcp.json`. GitHub Copilot in VS Code: add
+`{"servers":{"logoforge":{"type":"http","url":"https://logoforge.terravidhal.me/mcp"}}}`
+to `.vscode/mcp.json`. The server needs no key and no account.
 
 ## Example prompts
 
@@ -127,14 +144,17 @@ official request form instead of inventing a logo.
 skills/logoforge/     SKILL.md and the five reference files
 examples/             minimal Next.js app with the six recipes
 assets/readme/        before/after and light/dark screenshots
+assets/demo.gif       short demo of the six recipes
 evals/evals.json      prompt-level checks for the skill behaviour
 scripts/              repository check (npm run lint)
+examples/scripts/     demo capture and registry fetcher
 ```
 
 Maintainer checks:
 
 ```bash
 npm run lint
+npm run demo          # regenerates assets/demo.gif (built examples + ffmpeg)
 cd examples && npm ci && npm run build
 ```
 

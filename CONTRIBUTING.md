@@ -23,6 +23,7 @@ not a logo library.
 | Missing brand / removal | `skills/logoforge/references/missing-brand.md` |
 | Demo app | `examples/` |
 | README screenshots | `assets/readme/` |
+| README demo GIF | `assets/demo.gif` (regenerate with `npm run demo`) |
 | Evaluation prompts | `evals/evals.json` |
 
 If you change a recipe, update both the reference and the matching file in
@@ -52,6 +53,8 @@ cd examples
 npm ci
 npm run build
 npm run screenshots          # optional: needs Playwright Chromium
+cd ..
+npm run demo                 # optional: regenerates assets/demo.gif, needs ffmpeg
 ```
 
 `npm run lint` must pass. A section change should keep the example building in light and
