@@ -68,7 +68,7 @@ name; pass `""` when a visible label already names the brand).
 
 ## Screenshots
 
-`npm run screenshots` builds on the production server and writes 1440 px and 390 px captures
+`npm run screenshots` starts the production build and writes 1440 px and 390 px captures
 in light and dark to `../assets/readme/`, plus the before/after image. It needs a Playwright
 Chromium build (`npx playwright install chromium`).
 

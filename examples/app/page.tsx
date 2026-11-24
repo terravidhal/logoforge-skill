@@ -103,7 +103,7 @@ export default function HomePage() {
                 Install the skill
               </p>
               <code className="mt-2 block font-mono text-sm text-foreground">
-                npx skills add terravidhal/logoforge-skill
+                npx skills add terravidhal/logoforge-skill --skill logoforge
               </code>
               <p className="mt-2 text-xs text-muted-foreground">
                 Then ask your agent for the section. It resolves each brand on Logoforge before

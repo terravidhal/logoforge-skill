@@ -294,14 +294,14 @@ export function SignInButtons() {
         type="button"
         className="inline-flex h-10 items-center justify-center gap-2.5 rounded-lg border border-border bg-background px-4 text-sm font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
       >
-        <GithubLogo title="" className="h-5 w-5" />
+        <GithubLogo title="" className="h-5 w-auto" />
         <span>Sign in with GitHub</span>
       </button>
       <button
         type="button"
         className="inline-flex h-10 items-center justify-center gap-2.5 rounded-lg border border-border bg-background px-4 text-sm font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
       >
-        <GoogleLogo title="" className="h-5 w-5" />
+        <GoogleLogo title="" className="h-5 w-auto" />
         <span>Sign in with Google</span>
       </button>
     </div>

@@ -21,11 +21,11 @@ export function SignInButtons() {
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <button type="button" className={buttonClass}>
-            <GithubLogo title="" className="h-5 w-5" />
+            <GithubLogo title="" className="h-5 w-auto" />
             <span>Sign in with GitHub</span>
           </button>
           <button type="button" className={buttonClass}>
-            <GoogleLogo title="" className="h-5 w-5" />
+            <GoogleLogo title="" className="h-5 w-auto" />
             <span>Sign in with Google</span>
           </button>
         </div>

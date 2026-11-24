@@ -102,13 +102,20 @@ Inline SVG (needed for `currentColor` mono):
 Use `aria-hidden="true"` instead of `role`/`aria-label` when the adjacent text names the
 brand. Never edit the SVG's paths, colors, or `viewBox`.
 
-Dark mode with `<img>`: swap the file instead of filtering it. Use the `icon-dark` file
-when it exists and the theme is dark:
+Dark mode with `<img>`: swap the file instead of filtering it. Download both the
+`icon` and `icon-dark` files when the dark variant exists, then switch on the theme:
+
+```bash
+curl -s https://logoforge.terravidhal.me/logos/github/icon.svg \
+  -o public/logos/github-icon.svg
+curl -s https://logoforge.terravidhal.me/logos/github/icon-dark.svg \
+  -o public/logos/github-icon-dark.svg
+```
 
 ```html
 <picture>
-  <source srcset="/logos/github/icon-dark.svg" media="(prefers-color-scheme: dark)" />
-  <img src="/logos/github/icon.svg" alt="GitHub" style="height: 24px; width: auto" />
+  <source srcset="/logos/github-icon-dark.svg" media="(prefers-color-scheme: dark)" />
+  <img src="/logos/github-icon.svg" alt="GitHub" style="height: 24px; width: auto" />
 </picture>
 ```
 

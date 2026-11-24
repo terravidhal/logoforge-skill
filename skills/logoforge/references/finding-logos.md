@@ -59,7 +59,7 @@ curl -s https://logoforge.terravidhal.me/api/logos/stripe.json \
   | jq '{slug, component, variants: (.svg | keys), install, guidelines}'
 ```
 
-Expected shape (verified on `stripe`):
+Expected shape (excerpt, verified on `stripe`):
 
 ```json
 {
