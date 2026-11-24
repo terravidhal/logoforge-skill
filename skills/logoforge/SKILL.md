@@ -3,8 +3,8 @@ name: logoforge
 description: >-
   Use real brand logos in a UI instead of drawing, inventing, or guessing them.
   Use when adding or fixing "Works with", "Trusted by", "Built with",
-  integrations, customers, partners, comparison-table, footer, or "Sign in with"
-  sections; when a page needs the logo of Stripe, GitHub, Vercel, Supabase,
+  integrations, customers, partners, comparison tables, footer, logo clouds,
+  or "Sign in with" sections; when a page needs the logo of Stripe, GitHub, Vercel, Supabase,
   Figma, Slack, OpenAI, Google, AWS, or any developer tool; or when the user
   asks to add, replace, fix, or verify brand logos. Resolves logos through
   Logoforge (MCP server, JSON API, or shadcn registry), installs the official
